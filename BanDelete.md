@@ -1,0 +1,11 @@
+Ban delete
+```sql
+DELIMITER
+CREATE TRIGGER undelete_audit
+BEFORE DELETE
+   ON audit FOR EACH ROW
+   BEGIN
+         SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'DELETE canceled'; 
+END;
+DELIMITER ;
+```

@@ -1,0 +1,30 @@
+### Explain
+- select_type: 
+  - SIMPLE 
+  - PRIMARY 
+  - DERIVED 
+  - SUBQUERY
+  - DEPENDENT SUBQUERY 
+  - UNCACHABLE SUBQUERY
+  - UNION
+  - DEPENDENT UNION
+  - UNION RESULT
+- Type 
+  - System. 1 row
+  - Const. Fastest
+  - Eq_ref. Fast JOIN
+  - Ref. Double index
+  - Fulltext
+  - Ref_or_null. Like ref and have aslo null
+- Index_merge. Index list  
+  - Unique_subquery. One result, one primary key
+  - Index_subquery. Many result, one primary key
+  - Range. Index used for range (BETWEEN, IN, >, >=, etc)
+  - Index. Scan all indexes in tree to find rows
+  - All. Slow, without index scan table
+- Possible_keys. All possible index for use
+- Key. Used index
+- Key_len. Index length, count symbols need store to memory
+- Ref. Index compares with this columns or constants
+- Rows. Rows Count
+- Extra. Extra info

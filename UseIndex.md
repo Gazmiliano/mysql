@@ -1,0 +1,28 @@
+### Use index
+```sql
+USE KEY FOR ORDER BY  (date_updated)
+
+SELECT * FROM table1 USE INDEX (col1_index,col2_index)
+  WHERE col1=1 AND col2=2 AND col3=3;
+  
+SELECT * FROM table1 IGNORE INDEX (col3_index)
+  WHERE col1=1 AND col2=2 AND col3=3;
+
+SELECT * FROM t1 USE INDEX (i1) IGNORE INDEX FOR ORDER BY (i2) ORDER BY a;
+
+SELECT * FROM t1 USE INDEX (i1) USE INDEX (i1,i1);
+
+SELECT * FROM t1 USE INDEX FOR JOIN (i1) FORCE INDEX FOR JOIN (i2);
+
+SELECT * FROM t1 USE INDEX (i1) IGNORE INDEX (i2) USE INDEX (i2);
+
+SELECT * FROM t
+  USE INDEX (index1)
+  IGNORE INDEX (index1) FOR ORDER BY
+  IGNORE INDEX (index1) FOR GROUP BY
+  WHERE ... IN BOOLEAN MODE ... ;
+
+SELECT * FROM t
+  USE INDEX (index1)
+  WHERE ... IN BOOLEAN MODE .
+```
